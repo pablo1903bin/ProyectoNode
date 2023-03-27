@@ -1,0 +1,107 @@
+<div class="container w-75 mt-5 login">
+  <div class="row align-items-stretch">
+    <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6">
+
+    </div>
+    <div class="col p-5 rounded-end">
+      <div class="text-end">
+        <img src="/img/Gmail.svg.png" width="48" alt="" />
+      </div>
+      <div class="fw-bold text-center py-1"><h2>Bienvenido</h2></div>
+      <div class="fw-bold text-center py-1"><h4>{{post.pagina}}</h4></div>
+      <!--LOGIN-->
+
+      <div class="fw-bold text-center py-1">
+        <h3>
+
+          {{#if errores}}
+            {{#each errores}}
+              <div class="container btn btn-danger">{{msg}}</div>
+            {{/each}}
+
+          {{/if}}
+        </h3>
+      </div>
+
+      <form action="/api/v1/auth/login" method="post">
+        <div class="mb-4">
+          <input
+            class="form-control"
+            type='hidden"'
+            name="_csrf"
+            value="{{csrfToken}}"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+
+        <div class="row my-3 opcionesLog">
+          <div class="col">
+            <span class="textoOp">No tienes cuenta
+              <a href="/api/v1/auth/registro">Crear una</a></span><br /></div>
+          <div class="col">
+            <span class="textoOp"><a href="/api/v1/auth/olvide-password">Olvide
+                mi password</a></span></div>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+        </div>
+      </form>
+
+      <!--  LOGGin con redes sociales-->
+      <div class="container w-100 my-5">
+        <div class="row text-center">
+          <div class="col-12">Iniciar sesion</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline-primary w-100 my-1">
+              <div class="row align-items-center">
+
+                <div class="col-2 d-none d-md-block">
+                  <img src="/img/face.png" width="32" alt="" />
+                </div>
+                <div class="col-12 col-md-10 text-center">
+                  Facebook
+
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-primary w-100 my-1">
+              <div class="row align-items-center">
+
+                <div class="col-2 d-none d-md-block">
+                  <img src="/img/face.png" width="32" alt="" />
+                </div>
+                <div class="col-12 col-md-10 text-center">
+                  Facebook
+
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

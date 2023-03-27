@@ -1,0 +1,28 @@
+
+  .bg{ background-image:url(/img/sof.jpg) 
+      ; background-position: center-center;
+      border-radius: 8px;
+  }
+.login{
+  background: #67c2ef;
+  background: linear-gradient(to right, #1c77a8, #89d5fb);
+  border-radius: 14px;
+}
+.opcionesLog{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.textoOp{
+  font-size: small;
+  color: rgb(93, 94, 92);
+}
+.titulo{
+  color: rgb(0, 139, 49);
+}
+
+.labeltit{
+  color: rgb(62, 62, 62);
+  font-style: italic;
+}

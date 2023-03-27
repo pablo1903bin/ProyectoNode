@@ -1,0 +1,92 @@
+<div class="container w-75 mt-5 login">
+  <div class="row align-items-stretch">
+    <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6">
+
+    </div>
+    <div class="col p-5 rounded-end">
+      <div class="text-end">
+        <img src="/img/Gmail.svg.png" width="48" alt="" />
+      </div>
+      <div class="fw-bold text-center py-1"><h2>Bienvenido</h2></div>
+      <div class="fw-bold text-center py-1">
+        <h3>
+          {{post.pagina}}
+          {{#if errores}}
+            {{#each errores}}
+              <div class="container btn btn-danger">{{msg}}</div>
+            {{/each}}
+
+          {{/if}}
+        </h3>
+      </div>
+      <!--LOGIN-->
+
+      <form action="/api/v1/auth/registro" method="POST">
+
+        <div class="mb-4">
+          <input
+            class="form-control"
+            type="text"
+            name="_csrf"
+            value="{{csrfToken}}"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="form-label">NOMBRE</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            placeholder="Nombre completo"
+            value="{{usuario.nombre}}"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="form-label">CORREO ELECTRONICO</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+            value="{{usuario.email}}"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label">PASSWORD</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="form-label">REPETIR PASSWORD</label>
+          <input
+            type="password"
+            class="form-control"
+            name="repetir_password"
+            placeholder="Repetir password"
+          />
+        </div>
+
+        <div class="row my-3 opcionesLog">
+          <div class="col">
+            <span class="textoOp">Ya tienes cuenta?
+              <a href="/api/v1/auth/login">Inicia Sesion</a></span><br /></div>
+          <div class="col">
+            <span class="textoOp"><a href="/api/v1/auth/olvide-password">Olvide
+                mi password</a></span></div>
+        </div>
+
+        <div class="d-grid">
+
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

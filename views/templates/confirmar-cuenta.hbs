@@ -1,0 +1,13 @@
+<div class="container contenedor">
+  <div class="hijo"><h1 class="pagina">{{post.pagina}}</h1></div>
+  <div class="hijo"><h2 class="mensaje">{{post.mensaje}}</h2></div>
+
+  {{#if error}}
+
+    <div class="mensaje">
+      <a href="/api/v1/auth/login">Click aqui para iniciar sesion</a>
+    </div>
+
+  {{/if}}
+
+</div>
